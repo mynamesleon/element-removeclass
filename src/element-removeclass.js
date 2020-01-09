@@ -3,7 +3,7 @@ const trim = str => (str == null ? '' : (str + '').replace(REGEX_TRIM, ''));
 
 /**
  * @description remove class(es) from element(s) - support pre `classList`
- * @param {Element} elem
+ * @param {Element|Element[]} elem
  * @param {String} classes - space delimitted class(es) to remove
  */
 export default function removeClass(elem, classes) {
@@ -29,7 +29,7 @@ export default function removeClass(elem, classes) {
     }
 
     // trim final value for html validity
-    finalValue = trim(curValue + finalValue);
+    finalValue = trim(finalValue);
     if (curValue !== finalValue) {
         elem.setAttribute('class', finalValue);
     }
